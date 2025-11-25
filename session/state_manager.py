@@ -29,10 +29,12 @@ def add_message(role: str, content: str) -> None:
         role (str): "user" or "assistant"
         content (str): message text
     """
-    st.session_state["messages"].append({
-        "role": role,
-        "content": content,
-    })
+    st.session_state["messages"].append(
+        {
+            "role": role,
+            "content": content,
+        }
+    )
 
 
 def get_history():
