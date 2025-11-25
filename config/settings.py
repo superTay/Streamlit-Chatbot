@@ -5,6 +5,7 @@ import os
 # ---------- APP CONFIG ----------
 APP_TITLE = "Assistant n8n / GPT"
 APP_ICON = "💬"
+APP_FAVICON = "static/favicon.svg"  # Chatbot-style favicon for the page/tab
 APP_LAYOUT = "centered"
 APP_INITIAL_SIDEBAR_STATE = "collapsed"
 
