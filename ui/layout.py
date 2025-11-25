@@ -1,4 +1,5 @@
 # ui/layout.py
+import pathlib
 import streamlit as st
 from config.settings import (
     APP_TITLE,
@@ -29,6 +30,18 @@ def configure_page() -> None:
     )
 
 
+def inject_theme_css() -> None:
+    """
+    Inject the custom CSS theme (styles/theme.css) into the Streamlit app.
+    Keep all UI styling centralized in this file.
+    """
+    css_path = pathlib.Path("styles/theme.css")
+    if css_path.exists():
+        with css_path.open("r", encoding="utf-8") as f:
+            css = f.read()
+        st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
+
 def render_sidebar() -> None:
     """
     Render the sidebar UI components:
@@ -49,3 +62,4 @@ def render_sidebar() -> None:
 
         st.divider()
         st.caption("Built with Streamlit.")
+
