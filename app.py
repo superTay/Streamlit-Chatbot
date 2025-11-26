@@ -3,7 +3,7 @@ import streamlit as st
 
 from config.settings import APP_TITLE, APP_ICON
 from session.state_manager import init_session_state, add_message, get_history, clear_history
-from ui.layout import configure_page, render_sidebar
+from ui.layout import configure_page, render_sidebar, inject_theme_css
 from ui.components import render_chat_history, render_system_message
 from services.n8n_client import send_message_to_n8n
 from services.stream_utils import stream_text
@@ -11,6 +11,7 @@ from services.stream_utils import stream_text
 
 # --- Page setup ---
 configure_page()
+inject_theme_css()  # <-- NEW: apply global theme CSS
 
 # --- Session state initialization ---
 init_session_state()
@@ -68,3 +69,4 @@ if prompt:
 
     finally:
         st.session_state["is_waiting_response"] = False
+

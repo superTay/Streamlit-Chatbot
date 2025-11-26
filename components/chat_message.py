@@ -1,8 +1,8 @@
 # components/chat_message.py
-
 import streamlit as st
 
-def render_message(role: str, content: str):
+
+def render_message(role: str, content: str) -> None:
     """
     Render a chat message using Streamlit's chat API.
     
@@ -18,3 +18,4 @@ def render_message(role: str, content: str):
     
     with st.chat_message(role):
         st.write(content)
+

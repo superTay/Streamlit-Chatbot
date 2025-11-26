@@ -1,14 +1,20 @@
 # ui/components.py
-import streamlit as st
 from typing import List, Dict
+import streamlit as st
+
+from components.chat_message import render_message
 
 
 def render_chat_history(messages: List[Dict[str, str]]) -> None:
     """
-    Render all messages stored in the session state using st.chat_message.
+    Render all messages stored in the session state using the chat_message component.
     
-    Parameters:
-        messages (list): A list of dicts with keys: role, content.
+    Parameters
+    ----------
+    messages : list of dict
+        Each dict must contain:
+            - role: "user" or "assistant"
+            - content: text of the message
     """
     for msg in messages:
         role = msg.get("role", "assistant")
@@ -17,13 +23,13 @@ def render_chat_history(messages: List[Dict[str, str]]) -> None:
         if role not in ("user", "assistant"):
             role = "assistant"
 
-        with st.chat_message(role):
-            st.markdown(content)
+        render_message(role, content)
 
 
 def render_system_message(text: str) -> None:
     """
-    Display a system-style assistant message (informational).
+    Display a system-style assistant message (informational / error).
     """
     with st.chat_message("assistant"):
         st.info(text)
+
