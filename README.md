@@ -1,3 +1,12 @@
+
+[![Streamlit Chatbot](https://img.shields.io/badge/Streamlit%20%2B%20n8n-Chatbot-ff6b6b?style=for-the-badge&logo=streamlit&logoColor=white)](https://github.com/superTay/Streamlit-Chatbot)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=yellow)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.40%2B-ff4b4b?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![n8n](https://img.shields.io/badge/n8n-Workflows-0985E7?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io/)
+[![Stars](https://img.shields.io/github/stars/superTay/Streamlit-Chatbot?style=social)](https://github.com/superTay/Streamlit-Chatbot)
+[![Forks](https://img.shields.io/github/forks/superTay/Streamlit-Chatbot?style=social)](https://github.com/superTay/Streamlit-Chatbot)
+
+
 # Streamlit + Chatbot (MVP)
 
 Lightweight Streamlit frontend to chat with a single n8n flow. The app renders one chat page, sends the user message to one webhook, and displays the reply. All memory/AI happens in n8n; Streamlit only handles the interaction.
